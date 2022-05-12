@@ -26,3 +26,8 @@ p {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+/* page login.html.twig */
+.size-img {
+    width: 250px;
+}
+
