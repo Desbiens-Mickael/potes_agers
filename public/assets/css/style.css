@@ -1,0 +1,13 @@
+/* @import vers les feuilles de styles */
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant:wght@300&family=Monoton&family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant:wght@300&family=Monoton&family=Roboto:wght@900&display=swap');
+
+/* Couleurs */
+:root {
+    --bs-blue: #0c879a;
+    --bs-yellow: #ffd350;
+    --bs-gray: #f7f7f7;
+}
+
