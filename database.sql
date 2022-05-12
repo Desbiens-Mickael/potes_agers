@@ -23,41 +23,64 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `item`
+-- Structure de la table `user`
 --
 
-CREATE TABLE `item` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` int AUTO_INCREMENT NOT NULL,
+  `name` varchar(80) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  PRIMARY KEY(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+--
+-- Structure de la table `user`
+--
+
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `product` (
+  `id` int AUTO_INCREMENT NOT NULL,
+  `name` varchar(80) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `category_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  PRIMARY KEY(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Structure de la table `user`
+--
+
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE `category` (
+  `id` int AUTO_INCREMENT NOT NULL,
+  `name` varchar(80) NOT NULL,
+  PRIMARY KEY(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `item`
 --
+INSERT INTO `product` (`name`, `message`, `category_id`, `user_id`) VALUES
+('carotte', 'je donne carotte contre bon soins', 1, 1);
 
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
+INSERT INTO `user` (`name`, `address`, `email`) VALUES
+('TOto', 'rue du test', 'toto.test@gmail.com');
 
---
--- Index pour les tables exportées
---
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'aliment'),
+(2, 'conseil'),
+(3, 'jardin');
 
---
--- Index pour la table `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `product`
+ADD CONSTRAINT fk_product_category FOREIGN KEY (category_id) REFERENCES category (id);
 
---
--- AUTO_INCREMENT pour les tables exportées
---
+ALTER TABLE `product`
+ADD CONSTRAINT fk_product_user FOREIGN KEY (user_id) REFERENCES user (id);
 
---
--- AUTO_INCREMENT pour la table `item`
---
-ALTER TABLE `item`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
