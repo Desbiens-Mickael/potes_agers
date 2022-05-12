@@ -1,4 +1,4 @@
-var map = L.map('map').setView([50.5350572, 2.9505476], 13);
+var map = L.map('map').setView([48.2772089, 6.9556556], 13);
 
 // var myIcon = L.icon({
 //     iconUrl: '/assets/images/icone-map.png',
@@ -12,14 +12,8 @@ var map = L.map('map').setView([50.5350572, 2.9505476], 13);
 
 // var marker = L.marker([51.5, -0.09], {icon: myIcon}).addTo(map);
 
-var marker = L.marker([48.5442937, 7.49059]).addTo(map);
+var marker = L.marker([48.2772089, 6.9556556]).addTo(map);
 
-function clik(e) {
-    alert('yo');
-}
-
-marker.on('click', clik);
-marker.off('click', clik);
 
 // var circle = L.circle([51.508, -0.11], {
 //     color: 'red',
@@ -36,14 +30,7 @@ marker.off('click', clik);
 
 
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoibWlrZTAxMDEiLCJhIjoiY2wzM2NiYmc3MHN3YzNscXY2NWxsNDV1cyJ9.-_xSdCkNp31z0gAy0RXDAQ'
-}).addTo(map);
+
 
 
 // marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
@@ -55,8 +42,34 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 //     .setContent("I am a standalone popup.")
 //     .openOn(map);
 
+const country = 'france';
+let address;
+let postal_code;
+let gps = [];
 
-fetch('https://nominatim.openstreetmap.org/search?format=json&q=rue+du+General+de+Gaulle+france+59251')
+fetch('http://localhost:8000/api/products')
     .then(response => response.json())
-    .then(json => console.log(json[0].lat, json[0].lon))
+    .then(json => {
+        for (let i = 0; i < json.length; i++) {
+            address = json[i].address;
+            postal_code = json[i].postal_code;
 
+            fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${address} ${postal_code} ${country}`)
+                .then(response => response.json())
+                .then(json =>
+                     gps.push([json[0].lat, json[0].lon])
+                     )
+        }
+    })
+
+console.log(gps);
+
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoibWlrZTAxMDEiLCJhIjoiY2wzM2NiYmc3MHN3YzNscXY2NWxsNDV1cyJ9.-_xSdCkNp31z0gAy0RXDAQ'
+}).addTo(map);

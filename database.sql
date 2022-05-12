@@ -31,6 +31,7 @@ CREATE TABLE `user` (
   `id` int AUTO_INCREMENT NOT NULL,
   `name` varchar(80) NOT NULL,
   `address` varchar(100) NOT NULL,
+  `postal_code` int NOT NULL,
   `email` varchar(100) NOT NULL,
   PRIMARY KEY(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -82,8 +83,13 @@ INSERT INTO `product` (`name`, `message`, `image`, `category_id`, `user_id`) VAL
 
 
 
-INSERT INTO `user` (`name`, `address`, `email`) VALUES
-('TOto', 'rue du test', 'toto.test@gmail.com');
+INSERT INTO `user` (`name`, `address`, `postal_code`, `email`) VALUES
+('Momo', '32 rue des Travailleurs', 59000, 'momo.test@gmail.com'),
+('Zozo', '24 rue des Travailleurs', 59000, 'zozo.test@gmail.com'),
+('Paul', '12 rue des Travailleurs', 59000, 'paul.test@gmail.com'),
+('Julie', '20 rue des Travailleurs', 59000, 'julie.test@gmail.com'),
+('Alice', '10 rue des Travailleurs', 59000, 'alice.test@gmail.com'),
+('TOto', '22 rue des Travailleurs', 59000, 'tOto.test@gmail.com');
 
 INSERT INTO `category` (`id`, `name`) VALUES
 (1, 'Aliments'),

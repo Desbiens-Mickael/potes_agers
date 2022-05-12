@@ -10,6 +10,7 @@ return [
     '' => ['HomeController', 'index',],
     'product/show' => ['ProductController', 'showProduct',],
     'category' => ['CategoryController', 'index',],
+    'api/products' => ['AjaxController', 'getproducts',],
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
