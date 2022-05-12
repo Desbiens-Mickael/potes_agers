@@ -11,3 +11,8 @@
     --bs-gray: #f7f7f7;
 }
 
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
