@@ -66,19 +66,28 @@ CREATE TABLE `category` (
 -- Contenu de la table `item`
 --
 INSERT INTO `product` (`name`, `message`, `image`, `category_id`, `user_id`) VALUES
-('Carotte', 'je donne carotte contre bon soins', 'carotte.jpeg', 1, 1),
-('Tomate', 'je donne tomates contre bon soins', 'tomate.jpeg', 1, 1),
-('Courgette', 'je donne courgettes contre bon soins', 'courgette.jpeg', 2, 1),
-('Patate', 'je donne patates contre bon soins', 'patate.jpeg', 1, 1),
-('Potimaron', 'je donne potimarons contre bon soins', 'potimaron.jpeg', 2, 1),
-('Salade', 'je donne salades contre bon soins', 'salade.jpeg', 1, 1),
-('Cerise', 'je donne cerises contre bon soins', 'cerise.jpeg', 2, 1),
-('Poire', 'je donne poires contre bon soins', 'poire.jpeg', 2, 1),
-('Fraise', 'je donne fraises contre bon soins', 'fraise.jpeg', 2, 1),
-('Citron', 'je donne citrons contre bon soins', 'citron.jpeg', 2, 1),
-('Figue', 'je donne figues contre bon soins', 'figue.jpeg', 2, 1),
-('Prune', 'je donne prunes contre bon soins', 'prune.jpeg', 2, 1),
-('Pomme', 'je donne pommes contre bon soins', 'pomme.jpeg', 2, 1);
+('Potager à partager', 'je prête potager contre bon soins', 'potager1.jpeg', 4, 1),
+('Prêt de potager', 'je prête potager contre bon soins', 'potager2.jpeg', 4, 1),
+('Potager disponible', 'je prête potager contre bon soins', 'potager3.jpeg', 4, 1),
+('Préparer son sol', 'je conseille contre bon soins', 'sol1.jpeg', 3, 1),
+('Compost', 'je conseille contre bon soins', 'compost1.jpeg', 3, 1),
+('Choisir son semis', 'je conseille contre bon soins', 'semis1.jpeg', 3, 1),
+('Zéro pesticide', 'je conseille contre bon soins', 'zeropesticide1.jpeg', 3, 1),
+('Désherber facilement', 'je conseille contre bon soins', 'desherber1.jpeg', 3, 1),
+('Carottes en trop', 'je donne carotte contre bon soins', 'carotte1.jpeg', 1, 1),
+('Tomates à donner', 'je donne tomates contre bon soins', 'tomate1.jpeg', 1, 1),
+('Radis délicieux', 'je donne radis contre bon soins', 'radis1.jpeg', 1, 1),
+('Courgettes à récupérer', 'je donne courgettes contre bon soins', 'courgette1.jpeg', 1, 1),
+('Pomme de terre', 'je donne patates contre bon soins', 'pomme-de-terre1.jpeg', 1, 1),
+('Potimaron à partager', 'je donne potimarons contre bon soins', 'potimaron1.jpeg', 1, 1),
+('Laitue à venir chercher', 'je donne salades contre bon soins', 'laitue1.jpeg', 1, 1),
+('Cerises en trop', 'je donne cerises contre bon soins', 'cerise1.jpeg', 2, 1),
+('Poires bien mures', 'je donne poires contre bon soins', 'poire1.jpeg', 2, 1),
+('Fraises à partager', 'je donne fraises contre bon soins', 'fraise1.jpeg', 2, 1),
+('Citrons trop bons', 'je donne citrons contre bon soins', 'citron1.jpeg', 2, 1),
+('Figues à donner', 'je donne figues contre bon soins', 'figue1.jpeg', 2, 1),
+('Prunes délicieuses', 'je donne prunes contre bon soins', 'prune1.jpeg', 2, 1),
+('Pommes à partager', 'je donne pommes contre bon soins', 'pomme1.jpeg', 2, 1);
 
 
 
