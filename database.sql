@@ -66,19 +66,19 @@ CREATE TABLE `category` (
 -- Contenu de la table `item`
 --
 INSERT INTO `product` (`name`, `message`, `image`, `category_id`, `user_id`) VALUES
-('Carotte', 'je donne carotte contre bon soins', 'carotte.jpeg', 2, 1),
-('Tomate', 'je donne tomates contre bon soins', 'tomate.jpeg', 2, 1),
+('Carotte', 'je donne carotte contre bon soins', 'carotte.jpeg', 1, 1),
+('Tomate', 'je donne tomates contre bon soins', 'tomate.jpeg', 1, 1),
 ('Courgette', 'je donne courgettes contre bon soins', 'courgette.jpeg', 2, 1),
-('Patate', 'je donne patates contre bon soins', 'patate.jpeg', 2, 1),
+('Patate', 'je donne patates contre bon soins', 'patate.jpeg', 1, 1),
 ('Potimaron', 'je donne potimarons contre bon soins', 'potimaron.jpeg', 2, 1),
-('Salade', 'je donne salades contre bon soins', 'salade.jpeg', 2, 1),
-('Cerise', 'je donne cerises contre bon soins', 'cerise.jpeg', 3, 1),
-('Poire', 'je donne poires contre bon soins', 'poire.jpeg', 3, 1),
-('Fraise', 'je donne fraises contre bon soins', 'fraise.jpeg', 3, 1),
-('Citron', 'je donne citrons contre bon soins', 'citron.jpeg', 3, 1),
-('Figue', 'je donne figues contre bon soins', 'figue.jpeg', 3, 1),
-('Prune', 'je donne prunes contre bon soins', 'prune.jpeg', 3, 1),
-('Pomme', 'je donne pommes contre bon soins', 'pomme.jpeg', 3, 1);
+('Salade', 'je donne salades contre bon soins', 'salade.jpeg', 1, 1),
+('Cerise', 'je donne cerises contre bon soins', 'cerise.jpeg', 2, 1),
+('Poire', 'je donne poires contre bon soins', 'poire.jpeg', 2, 1),
+('Fraise', 'je donne fraises contre bon soins', 'fraise.jpeg', 2, 1),
+('Citron', 'je donne citrons contre bon soins', 'citron.jpeg', 2, 1),
+('Figue', 'je donne figues contre bon soins', 'figue.jpeg', 2, 1),
+('Prune', 'je donne prunes contre bon soins', 'prune.jpeg', 2, 1),
+('Pomme', 'je donne pommes contre bon soins', 'pomme.jpeg', 2, 1);
 
 
 
@@ -86,11 +86,10 @@ INSERT INTO `user` (`name`, `address`, `email`) VALUES
 ('TOto', 'rue du test', 'toto.test@gmail.com');
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'Aliments'),
-(2, 'Légumes'),
-(3, 'Fruits'),
-(4, 'Conseils'),
-(5, 'Potagers');
+(1, 'Légumes'),
+(2, 'Fruits'),
+(3, 'Conseils'),
+(4, 'Potagers');
 
 ALTER TABLE `product`
 ADD CONSTRAINT fk_product_category FOREIGN KEY (category_id) REFERENCES category (id);
