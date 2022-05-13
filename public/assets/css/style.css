@@ -55,3 +55,7 @@ a:hover {
     list-style-type: none;
     color: var(--bs-blue);
 }
+
+.img-category {
+    width: 30rem;
+}
