@@ -1,0 +1,24 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+	<img src="https://www.wearephenix.com/wp-content/uploads/2021/09/distribution-tranchevalorisez-faim-partenaire-bleu-vert-jaune-corail-fr.svg" class="w-25 mb-5" alt="">
+    <form action="/thanks.php" method="post">
+		<div class="d-flex flex-column">
+			<label for="lname">Nom :</label>
+			<input type="text" id="lname" name="user_lastname">
+			<label for="fname">Prénom :</label>
+			<input type="text" id="fname" name="user_firstname">
+			<label for="email">Email ou téléphone :</label>
+			<input type="contact" id="contact" name="user_contact">
+            <label for="cp">Code postal :</label>
+			<input type="text" id="cp" name="user_cp">
+            <label for="password">Mot de passe :</label>
+			<input type="password" id="password" name="user_password">
+
+		<div class="btn mt-3">
+			<button type="submit" class="btn">Rejoindre Potes'agers</button>
+		</div>
+	</form>
+</div>
+{% endblock %}
