@@ -1,10 +1,16 @@
 /* @import vers les feuilles de styles */
+@import './_nav.css';
+@import './_footer.css';
+@import '_products.css';
 @import './_index.css';
 @import './_category.css';
+@import './_form.css';
+
 
 /* Typography */
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant:wght@300&family=Monoton&family=Open+Sans:wght@300&family=Roboto:wght@900&family=Source+Sans+Pro:wght@600;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300&display=swap');
+
 
 /* Couleurs */
 :root {
@@ -16,7 +22,7 @@
 }
 
 body {
-    display: flex;
+    /* display: flex; */
     background-color: var(--bs-gray);
 }
 
@@ -26,7 +32,9 @@ h1, h2, h3 {
 
 p {
     font-family: 'Source Sans Pro', sans-serif;
+    font-size: .9rem;
 }
+
 
 a {
     font-family: 'Source Sans Pro', sans-serif;
@@ -37,6 +45,7 @@ a {
 a:hover {
     color: var(--bs-blue);
 }
+
 
 /* page login.html.twig */
 .size-img {
@@ -56,6 +65,8 @@ a:hover {
     color: var(--bs-blue);
 }
 
+
 .img-category {
     width: 30rem;
 }
+
