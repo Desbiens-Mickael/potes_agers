@@ -3,4 +3,19 @@
     width: auto;
     max-width: 70px;
     max-height: 70px;
+
+}
+
+.social-link {
+
+    color: white;
+}
+.social-links {
+
+    justify-content: flex-end;
+}
+
+.social-link:hover {
+
+    color: var(--bs-yellow);
 }
