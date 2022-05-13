@@ -65,3 +65,8 @@ a:hover {
     color: var(--bs-blue);
 }
 
+
+.img-category {
+    width: 30rem;
+}
+
