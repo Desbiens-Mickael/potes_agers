@@ -3,9 +3,9 @@
     margin-bottom: 4rem;
 }
 
-.details-yellow2 {
+/* .details-yellow2 {
     margin-top: -3rem;
-}
+} */
 
 .button-flex {
     margin-top: 3rem;
@@ -45,4 +45,10 @@
   background-color: var(--bs-buttonhover);
   color: #ffffff;
 }
+
+.titre > h3 {
+  text-align: center;
+}
+
+
 
