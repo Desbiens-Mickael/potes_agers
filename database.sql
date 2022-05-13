@@ -33,6 +33,7 @@ CREATE TABLE `user` (
   `address` varchar(100) NOT NULL,
   `postal_code` int NOT NULL,
   `email` varchar(100) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
   PRIMARY KEY(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -66,6 +67,7 @@ CREATE TABLE `category` (
 --
 -- Contenu de la table `item`
 --
+
 INSERT INTO `product` (`name`, `message`, `image`, `category_id`, `user_id`) VALUES
 ('Potager à partager', 'je prête potager contre bon soins', 'potager1.jpeg', 4, 1),
 ('Prêt de potager', 'je prête potager contre bon soins', 'potager2.jpeg', 4, 1),
@@ -90,15 +92,6 @@ INSERT INTO `product` (`name`, `message`, `image`, `category_id`, `user_id`) VAL
 ('Prunes délicieuses', 'je donne prunes contre bon soins', 'prune1.jpeg', 2, 1),
 ('Pommes à partager', 'je donne pommes contre bon soins', 'pomme1.jpeg', 2, 1);
 
-
-
-INSERT INTO `user` (`name`, `address`, `postal_code`, `email`) VALUES
-('Momo', '22 rue du Général de Gaulle', 59251, 'momo.test@gmail.com'),
-('Zozo', '22 rue du Marais', 59251, 'zozo.test@gmail.com'),
-('Paul', '22 rue de la Rive', 59251, 'paul.test@gmail.com'),
-('Julie', '22 rue du Marais', 59251, 'julie.test@gmail.com'),
-('Alice', '22 rue Pasteur', 59251, 'alice.test@gmail.com'),
-('TOto', '22 rue Pasteur', 59112, 'tOto.test@gmail.com');
 
 INSERT INTO `category` (`id`, `name`) VALUES
 (1, 'Légumes'),
