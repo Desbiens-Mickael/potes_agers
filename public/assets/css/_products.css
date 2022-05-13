@@ -1,5 +1,6 @@
 #products {
     background-color: var(--bs-gray);
+    display: initial;
 }
 
 .swiper-slide {
