@@ -4,6 +4,7 @@
 @import '_products.css';
 @import './_index.css';
 @import './_form.css';
+@import './_product-show.css';
 
 /* Typography */
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant:wght@300&family=Monoton&family=Open+Sans:wght@300&family=Roboto:wght@900&family=Source+Sans+Pro:wght@600;900&display=swap');

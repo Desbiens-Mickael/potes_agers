@@ -14,12 +14,12 @@
                     {% for product in products|filter(product => category.id == product.category_id) %}
                         <div class="swiper-slide d-flex flex-column position-relative">
                             <img class="img-fluid" src="/uploads/{{ product.image }}" alt="">
-                            <a class="stretched-link" href="#"> 
+                            <a class="stretched-link" href="/product/show">
                                 {{ product.productName }}
                             </a>
                         </div>
-                    {% endfor %} 
-            
+                    {% endfor %}
+
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
