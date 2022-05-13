@@ -1,6 +1,50 @@
-.footer-brand>img {
+.foot-link-img>img {
     height: auto;
     width: auto;
-    max-width: 70px;
-    max-height: 70px;
+    max-width: 20px;
+    max-height: 20px;
+    margin-left: 1rem;
+    color: white;
 }
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1rem;
+    background-color: var(--bs-blue);
+}
+
+.text-foot > p {
+    color: white;
+}
+
+.img-foot {
+    margin-right: 3rem;
+}
+
+.text-foot {
+    margin-left: 3rem;
+}
+
+@media screen and (max-width: 541px) {
+    .foot-link-img>img {
+        margin-bottom: 0.5rem;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 1rem;
+    }
+
+    .img-foot {
+        margin-right: 0rem;
+    }
+    
+    .text-foot {
+        margin-left: 0rem;
+    }
+}
+
