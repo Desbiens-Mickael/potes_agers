@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Controller\AbstractController;
 use App\Model\ProductManager;
 use App\Model\CategoryManager;
+use App\Model\UserManager;
 
 class ProductController extends AbstractController
 {
@@ -20,12 +21,11 @@ class ProductController extends AbstractController
         ]);
     }
 
-
     public function showProduct()
     {
         return $this->twig->render('Product/show.html.twig');
     }
-  
+
     public function add(): ?string
     {
         // if (!$this->user) {

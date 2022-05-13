@@ -3,17 +3,22 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
           integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
           crossorigin=""/>
+    <link rel="stylesheet" href="/assests/css/product-show.css">
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100 mt-5">
-        <div class=" h-50 w-100" id="map"></div>
+    <div class="container d-flex flex-column justify-content-center vh-100">
+        <div id="map" data-user-id="{{userid}}"></div>
+            <div class="pruduct">
+                <img src="/uploads/citron1.jpeg" alt="" class="citron">
+                <p class="p-size">je donne citrons contre bon soins</p>
+            </div>
     </div>
 {% endblock %}
 
 {% block javascript %}
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
             integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-            crossorigin=""></script>
+            crossorigin="/assets/uploads/citron1.jpeg"></script>
     <script src="/assets/js/map.js"></script>
 {% endblock %}

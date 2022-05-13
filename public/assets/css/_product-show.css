@@ -1,0 +1,32 @@
+body{
+    height: 100vh;
+}
+
+.pruduct{
+    margin-top: 2rem;
+    height: 25vh;
+    width: 50vw;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(225, 223, 223) ;
+}
+
+#map{
+    height: 30vh;
+    width: 50vw;
+    border-radius: 10px;
+
+
+}
+
+.citron{
+    height: 15vh;
+    width: 15vw;
+}
+
+.p-size{
+    font-size: 2rem;
+}
