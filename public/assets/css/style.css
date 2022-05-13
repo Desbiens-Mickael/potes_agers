@@ -1,4 +1,6 @@
 /* @import vers les feuilles de styles */
+@import './_nav.css';
+@import './_footer.css';
 @import '_products.css';
 @import './_index.css';
 @import './_form.css';

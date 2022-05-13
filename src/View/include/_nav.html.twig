@@ -1,22 +1,50 @@
-<nav class="navbar navbar-expand-lg sticky-top navbar-dark" style="background-color: #0c879a">
+{# <nav class="navbar navbar-expand-lg sticky-top navbar-dark" style="background-color: #0c879a">
 	<div class="container-fluid">
-		<a class="navbar-brand col-2-me" href="/">
-			<img class="img-fluid navbar-brand collapse navbar-collapse" src="/assets/images/logo.png" alt="logo_potes_agers" width="30%">
-		</a>
+
+
+<a class="navbar-brand" href="/"><img alt="Brand" src="/assets/images/logo.png" class="img-responsive" /></a>
+
+				</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-		<ul class="navbar-nav collapse navbar-collapse flex-row justify-content-around col-8">
+		<div class="navbar-nav collapse navbar-collapse flex-row justify-content-around col-8" id="navbarSupportedContent">
 
-			<li class="nav-item">
+
 				<a class="nav-link text-white fs-5" href="/#">Je recherche</a>
-			</li>
-            <li class="nav-item">
-				<a class="nav-link text-white fs-5" href="/#">Je partage</a>
-			</li>
 
-	<a class="navbar-nav col-2-ms" href="/#">
-		<img src="/assets/images/logo_user.png" alt="logo_user" width="40" height="40">
-        </a>
-</div></nav>
+
+				<a class="nav-link text-white fs-5" href="/#">Je partage</a>
+
+                <a class="navbar-nav col-2-ms" href="/#">
+		        <img src="/assets/images/logo_user.png" alt="logo_user" width="40" height="40">
+                </a>
+        </div>
+</div></nav> #}
+
+
+
+
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark" style="background-color: #0c879a">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><img alt="Brand" src="/assets/images/logo.png" class="img-responsive" /></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/category">Je cherche</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/#">Je partage</a>
+        </li>
+      </ul>
+      <a class="navbar-nav col-2-ms" href="/#">
+        <img src="/assets/images/logo_user.png" alt="logo_user" width="40" height="40">
+      </a>
+    </div>
+  </div>
+</nav>
