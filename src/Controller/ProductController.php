@@ -18,4 +18,30 @@ class ProductController extends AbstractController
             'products' => $products
         ]);
     }
+
+    public function add(): ?string
+    {
+        // if (!$this->user) {
+        //     header('Location: /login');
+        //     return null;
+        // }
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $product = array_map('trim', $_POST);
+
+            $fileName = $_FILES['image']['name'];
+            $uploadFile = __DIR__ . '/../../public/uploads/' . $fileName;
+            if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
+                $productManager = new ProductManager();
+                $product['image'] = $fileName;
+                $product['user_id'] = 1;
+                $productManager->insert($product);
+                header('Location:/products');
+                return null;
+            }
+        }
+        $categoryManager = new CategoryManager();
+        return $this->twig->render('Product/add.html.twig', [
+            'categories' => $categoryManager->selectAll()
+        ]);
+    }
 }
