@@ -40,8 +40,10 @@ class ProductController extends AbstractController
             }
         }
         $categoryManager = new CategoryManager();
+        $productManager = new ProductManager();
         return $this->twig->render('Product/add.html.twig', [
-            'categories' => $categoryManager->selectAll()
+            'categories' => $categoryManager->selectAll(),
+            'products' => $productManager->selectAll()
         ]);
     }
 }
