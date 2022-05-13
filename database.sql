@@ -32,6 +32,7 @@ CREATE TABLE `user` (
   `name` varchar(80) NOT NULL,
   `address` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
   PRIMARY KEY(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -66,9 +67,6 @@ CREATE TABLE `category` (
 --
 INSERT INTO `product` (`name`, `message`, `category_id`, `user_id`) VALUES
 ('carotte', 'je donne carotte contre bon soins', 1, 1);
-
-INSERT INTO `user` (`name`, `address`, `email`) VALUES
-('TOto', 'rue du test', 'toto.test@gmail.com');
 
 INSERT INTO `category` (`id`, `name`) VALUES
 (1, 'aliment'),
