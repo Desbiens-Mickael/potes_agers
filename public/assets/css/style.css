@@ -3,10 +3,13 @@
 @import './_footer.css';
 @import '_products.css';
 @import './_index.css';
+@import './_category.css';
 @import './_form.css';
+
 
 /* Typography */
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant:wght@300&family=Monoton&family=Open+Sans:wght@300&family=Roboto:wght@900&family=Source+Sans+Pro:wght@600;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300&display=swap');
 
 
 /* Couleurs */
@@ -33,7 +36,37 @@ p {
 }
 
 
+a {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+    color: var(--bs-gray-900);
+}
+
+a:hover {
+    color: var(--bs-blue);
+}
+
+
 /* page login.html.twig */
 .size-img {
     width: 250px;
 }
+
+/* page register.html.twig and login.html.twig */
+.error-register {
+    font-family: 'Archivo Black', sans-serif;
+    color: var(--bs-gray-900);
+    display: flex;
+    justify-content: center;
+}
+
+.error-list {
+    list-style-type: none;
+    color: var(--bs-blue);
+}
+
+
+.img-category {
+    width: 30rem;
+}
+
