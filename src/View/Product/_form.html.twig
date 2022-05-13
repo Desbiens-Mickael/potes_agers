@@ -1,0 +1,59 @@
+<section class="editor">
+    <div class="container d-flex flex-column justify-content-center vh-100">
+        <h1>Que souhaites-tu partager ?</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+            
+                <div class="row mb-3">
+                    <div class="col-sm-15">
+                        <select class="form-select" name="category" id="category" aria-label="Default select example">
+                            <option>Sélectionne une catégorie</option>
+                                {% for category in categories %}
+                                    <option value="{{ category.id }}" {{ category.id == product.category_id ? 'selected' }}>
+                                        {{ category.name }}
+                                    </option>
+                                {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-15">
+                        <input type="name" name="name" class="form-control" id="name" aria-describedby="nameHelp"/>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-15">
+                        <textarea class="form-control ckeditor" name="message" id="message"></textarea>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-15">
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" name="image" id="inputGroupFile02"/>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-dark">Partager</button>
+                <form action="/product/delete" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?');">
+                    <input type="hidden" name="id">
+                <button class="btn btn-dark m-3">Effacer</button>
+                </form>
+            </form>  
+    </div>
+</section>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+<script>
+    const editors = document.querySelectorAll('.ckeditor');
+    editors.forEach(function(editor) {
+        ClassicEditor.create(editor, {
+                mediaEmbed: {
+                previewsInData: true
+            }
+            }).then(editor => {
+                console.log(editor);
+            }).catch(error => {
+                console.error(error);
+            });
+    });
+
+</script>
