@@ -1,9 +1,5 @@
-.categorycontent {
+.logincontent {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-.categorycontent > h3 {
-    text-align: center;
   }
