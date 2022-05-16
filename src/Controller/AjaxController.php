@@ -15,10 +15,9 @@ class AjaxController extends AbstractController
 
     public function getproducts(): string
     {
-        $id = 5;
+        $id = 1;
         $userManager = new UserManager();
         $users = $userManager->selectOneById($id);
-        $users[] =  $_SESSION['ip'];
         return json_encode($users);
     }
 }

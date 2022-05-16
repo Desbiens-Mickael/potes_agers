@@ -21,9 +21,16 @@ class ProductController extends AbstractController
         ]);
     }
 
-    public function showProduct()
+    public function showProduct(int $productId, int $userId): string
     {
-        return $this->twig->render('Product/show.html.twig');
+        $productManager = new ProductManager();
+        $product = $productManager->selectOneById($productId);
+        $userManager = new UserManager();
+        $user = $userManager->selectOneById($userId);
+        return $this->twig->render('Product/show.html.twig', [
+            'user' => $user,
+            'product' => $product
+        ]);
     }
 
     public function add(): ?string

@@ -2,7 +2,7 @@ body{
     height: 100vh;
 }
 
-.pruduct{
+.box-product{
     margin-top: 2rem;
     height: 25vh;
     width: 50vw;
@@ -22,11 +22,16 @@ body{
 
 }
 
-.citron{
-    height: 15vh;
-    width: 15vw;
+.product-img{
+    height: 23vh;
+    width: 10vw;
+    border-radius: 10px;
 }
 
 .p-size{
-    font-size: 2rem;
+    font-size: 1.4rem;
+}
+
+.name{
+    font-weight: bold;
 }

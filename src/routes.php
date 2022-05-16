@@ -9,7 +9,7 @@
 return [
     '' => ['HomeController', 'index',],
 
-    'product/show' => ['ProductController', 'showProduct',],
+    'product/show' => ['ProductController', 'showProduct', ['product_id', 'user_id']],
     'login' => ['UserController', 'login',],
     'register' => ['UserController', 'register',],
     'logout' => ['UserController', 'logout',],

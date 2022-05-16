@@ -33,6 +33,7 @@ CREATE TABLE `user` (
   `address` varchar(100) NOT NULL,
   `postal_code` int NOT NULL,
   `email` varchar(100) NOT NULL,
+  `tel` varchar(20) DEFAULT NULL,
   `password` VARCHAR(255) NOT NULL,
   PRIMARY KEY(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -68,18 +69,23 @@ CREATE TABLE `category` (
 -- Contenu de la table `item`
 --
 
+INSERT INTO `user` (`name`, `address`, `postal_code`, `email`, `tel`, `password`)
+VALUES ('Paul', '28 rue du Général de Gaulle', 59251, 'paul@free.fr', '01-02-03-04-05', '0000' ),
+       ('Toto', '10 rue du Général de Gaulle', 59251, 'toto@free.fr', '06-00-23-58-33', '0000' ),
+       ('Mike', '22 rue du Général de Gaulle', 59251, 'desb@free.fr', '03-00-00-00-33', '0000' );
+
 INSERT INTO `product` (`name`, `message`, `image`, `category_id`, `user_id`) VALUES
 ('Potager à partager', 'je prête potager contre bon soins', 'potager1.jpeg', 4, 1),
-('Prêt de potager', 'je prête potager contre bon soins', 'potager2.jpeg', 4, 1),
-('Potager disponible', 'je prête potager contre bon soins', 'potager3.jpeg', 4, 1),
-('Préparer son sol', 'je conseille contre bon soins', 'sol1.jpeg', 3, 1),
-('Compost', 'je conseille contre bon soins', 'compost1.jpeg', 3, 1),
-('Choisir son semis', 'je conseille contre bon soins', 'semis1.jpeg', 3, 1),
+('Prêt de potager', 'je prête potager contre bon soins', 'potager2.jpeg', 4, 2),
+('Potager disponible', 'je prête potager contre bon soins', 'potager3.jpeg', 4, 3),
+('Préparer son sol', 'je conseille contre bon soins', 'sol1.jpeg', 3, 3),
+('Compost', 'je conseille contre bon soins', 'compost1.jpeg', 3, 3),
+('Choisir son semis', 'je conseille contre bon soins', 'semis1.jpeg', 3, 2),
 ('Zéro pesticide', 'je conseille contre bon soins', 'zeropesticide1.jpeg', 3, 1),
 ('Désherber facilement', 'je conseille contre bon soins', 'desherber1.jpeg', 3, 1),
-('Carottes en trop', 'je donne carotte contre bon soins', 'carotte1.jpeg', 1, 1),
-('Tomates à donner', 'je donne tomates contre bon soins', 'tomate1.jpeg', 1, 1),
-('Radis délicieux', 'je donne radis contre bon soins', 'radis1.jpeg', 1, 1),
+('Carottes en trop', 'je donne carotte contre bon soins', 'carotte1.jpeg', 1, 2),
+('Tomates à donner', 'je donne tomates contre bon soins', 'tomate1.jpeg', 1, 2),
+('Radis délicieux', 'je donne radis contre bon soins', 'radis1.jpeg', 1, 3),
 ('Courgettes à récupérer', 'je donne courgettes contre bon soins', 'courgette1.jpeg', 1, 1),
 ('Pomme de terre', 'je donne patates contre bon soins', 'pomme-de-terre1.jpeg', 1, 1),
 ('Potimaron à partager', 'je donne potimarons contre bon soins', 'potimaron1.jpeg', 1, 1),
