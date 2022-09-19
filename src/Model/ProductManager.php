@@ -34,4 +34,13 @@ class ProductManager extends AbstractManager
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
+
+    public function selectByCategory(int $categoryId): array
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE category_id=:category_id");
+        $statement->bindValue('category_id', $categoryId, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
 }

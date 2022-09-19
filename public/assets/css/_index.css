@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.page-title {
+position: relative;
+}
+
 .text-img {
   display: flex;
   flex-direction: row;
@@ -11,12 +15,15 @@
 
 /* Styles buttons */
 .details-yellow1 {
-    margin-bottom: 4rem;
+    position: absolute;
+    top: -30px;
+    left: -4%;
 }
-
-/* .details-yellow2 {
-    margin-top: -3rem;
-} */
+@media screen and (max-width: 522px) {
+    .details-yellow1 {
+        left: -15%;
+    }
+}
 
 .button-flex {
     margin-top: 3rem;
@@ -36,9 +43,8 @@
   font-weight: 600;
   justify-content: center;
   line-height: 20px;
-  max-width: 480px;
   min-height: 40px;
-  min-width: 0px;
+  width: 25%;
   overflow: hidden;
   padding: 0px;
   padding-left: 20px;
@@ -55,6 +61,12 @@
 .btn:focus {
   background-color: var(--bs-buttonhover);
   color: #ffffff;
+}
+
+@media screen and (max-width: 522px) {
+    .btn {
+        width: 75%;
+    }
 }
 
 .homecontent > h3 {

@@ -10,13 +10,20 @@ let address = userAddress.split(' ').join('+');
 fetch(`https://api-adresse.data.gouv.fr/search/?q=${address}&postcode=${userPostal}`)
     .then(response => response.json())
     .then(function(json){
-        return L.marker([json.features[0].geometry.coordinates[1], json.features[0].geometry.coordinates[0]]).addTo(map);
+        return L.marker([json.features[0].geometry.coordinates[1], json.features[0].geometry.coordinates[0]],
+             {alt: 'pointeur carte'})
+        .addTo(map)
+        .bindPopup('Le donneur')
+        .bindTooltip(userAddress);
 });
 
-let marker = L.marker([50.535521, 2.912183]).addTo(map);
+// la position de l'utilisateur
+let marker = L.marker([50.535521, 2.912183], {alt: 'pointeur carte'})
+.addTo(map)
+.bindPopup('Vous êtes ici').openPopup()
+.bindTooltip('Vous êtes ici');
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox/streets-v11',
     tileSize: 512,

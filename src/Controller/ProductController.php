@@ -9,12 +9,12 @@ use App\Model\UserManager;
 
 class ProductController extends AbstractController
 {
-    public function index(): string
+    public function index(int $categoryId): string
     {
         $categoryManager = new CategoryManager();
-        $categories = $categoryManager->selectDistinctAll();
+        $categories = $categoryManager->selectOneById($categoryId);
         $productManager = new ProductManager();
-        $products = $productManager->selectAll();
+        $products = $productManager->selectByCategory($categoryId);
         return $this->twig->render('Product/index.html.twig', [
             'categories' => $categories,
             'products' => $products
@@ -35,29 +35,30 @@ class ProductController extends AbstractController
 
     public function add(): ?string
     {
-        // if (!$this->user) {
-        //     header('Location: /login');
-        //     return null;
-        // }
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $product = array_map('trim', $_POST);
+        if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
+            $userManager = new UserManager();
+            $user = $userManager->selectOneById($_SESSION['user']['id']);
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $product = array_map('trim', $_POST);
 
-            $fileName = $_FILES['image']['name'];
-            $uploadFile = __DIR__ . '/../../public/uploads/' . $fileName;
-            if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
-                $productManager = new ProductManager();
-                $product['image'] = $fileName;
-                $product['user_id'] = 1;
-                $productManager->insert($product);
-                header('Location:/products');
-                return null;
+                $fileName = $_FILES['image']['name'];
+                $uploadFile = __DIR__ . '/../../public/uploads/' . $fileName;
+                if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
+                    $productManager = new ProductManager();
+                    $product['image'] = $fileName;
+                    $product['user_id'] = $user['id'];
+                    $productManager->insert($product);
+                    header('Location:/products');
+                    return null;
+                }
             }
         }
+
         $categoryManager = new CategoryManager();
         $productManager = new ProductManager();
         return $this->twig->render('Product/add.html.twig', [
             'categories' => $categoryManager->selectAll(),
-            'products' => $productManager->selectAll()
+            // 'products' => $productManager->selectAll()
         ]);
     }
 }

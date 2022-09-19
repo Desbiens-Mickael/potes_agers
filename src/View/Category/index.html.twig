@@ -2,17 +2,18 @@
 
 {% block content %}
 	<div class="category">
+        <h1 class="text-center mt-5 page-title w-75 mx-auto">
+            <img src="https://www.wearephenix.com/wp-content/themes/phenix/assets/img/decorations/triforce-yellow.svg"
+                 alt="" class="details-yellow1">
+            Ici tu as le choix de récupérer de la nourriture ou bien de partager un potager :
+        </h1>
 		<div class="categorycontent">
-			<h3><img src="https://www.wearephenix.com/wp-content/themes/phenix/assets/img/decorations/triforce-yellow.svg" alt="" class="details-yellow1">Ici tu as le choix de récupérer de la nourriture ou bien de partager un potager :</h3>
 			<img src="https://www.wearephenix.com/wp-content/themes/phenix/assets/img/decorations/doubletroubles-yellow.svg" alt="" class="details-yellow2">
-			<div class="button-flex d-flex flex-column justify-content-center w-25">
-				<a href="/products" class="btn" role="button">Aliments</a>
-				<a href="/products" class="btn mt-1" role="button">Potagers</a>
-				<a href="/products" class="btn mt-1" role="button">Conseils</a>
+			<div class="mt-5 w-100 d-flex flex-column justify-content-center align-items-center">
+            {% for category in categories %}
+                <a href="/products/?category_id={{ category.id }}" class="btn mt-2" role="button">{{ category.name }}</a>
+            {% endfor %}
 			</div>
 		</div>
-		{# <div class="img-category">
-			<img src="https://thefoodassembly.com/fr/p/assets/images/illustration-homepage-3.svg" alt="">
-		</div> #}
 	</div>
 {% endblock %}

@@ -3,30 +3,27 @@
 {% block content %}
     <!-- Swiper -->
 <section class="categories">
-    <body id="products">
+    <div id="products">
+        <section class="swiper mySwiper mb-5 mx-5">
+            <h2 class="mb-5">
+                {{ categories.name }}
+            </h2>
+            <div class="swiper-wrapper">
+                {% for product in products %}
+                    <div class="swiper-slide d-flex flex-column position-relative">
+                        <img class="img-fluid" src="/uploads/{{ product.image }}" alt="">
+                        <a class="stretched-link" href="/product/show?product_id={{product.id}}&user_id={{product.user_id}}">
+                            {{product.productName}}
+                        </a>
+                    </div>
+                {% endfor %}
 
-        {% for category in categories %}
-            <section class="swiper mySwiper mb-5 mx-5">
-                <h2 class="mb-5">
-                    {{ category.name }}
-                </h2>
-                <div class="swiper-wrapper">
-                    {% for product in products|filter(product => category.id == product.category_id) %}
-                        <div class="swiper-slide d-flex flex-column position-relative">
-                            <img class="img-fluid" src="/uploads/{{ product.image }}" alt="">
-                            <a class="stretched-link" href="/product/show?product_id={{product.id}}&user_id={{product.user_id}}">
-                                {{product.productName}}
-                            </a>
-                        </div>
-                    {% endfor %}
-
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-            </section>
-        {% endfor %}
-    </body>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </section>
+    </div>
 </section>
 
 <!-- Swiper JS -->

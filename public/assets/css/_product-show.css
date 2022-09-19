@@ -1,30 +1,14 @@
-body{
-    height: 100vh;
-}
-
-.box-product{
-    margin-top: 2rem;
-    height: 25vh;
-    width: 50vw;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: rgb(225, 223, 223) ;
-}
-
 #map{
-    height: 30vh;
-    width: 50vw;
-    border-radius: 10px;
+    height: 50vh;
+}
 
-
+.accordion {
+    background-color: var(--bs-button);
 }
 
 .product-img{
-    height: 23vh;
-    width: 10vw;
+    height: 250px;
+    width: 200px;
     border-radius: 10px;
 }
 
@@ -32,6 +16,40 @@ body{
     font-size: 1.4rem;
 }
 
-.name{
-    font-weight: bold;
+.product-contact{
+    height: 40px;
+    width: 40px;
+    margin-right: 1rem;
+}
+
+.round{
+    border-radius: 10px;
+    box-shadow: 5px 5px 12px rgb(38, 37, 37);
+}
+
+.accordion-button.collapsed, .accordion-item{
+     background-color: var(--bs-button);
+    border-radius: 10px;
+}
+
+.accordion-button::after {
+    margin-left: 0;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--bs-button);
+}
+
+.accordion-button:focus {
+    border-color:  initial;
+    box-shadow: initial;
+}
+
+.accordion-item {
+    padding: 0 0;
+}
+
+.accordion-button {
+    background: white;
+    border-radius: 50%;
 }

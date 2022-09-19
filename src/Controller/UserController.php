@@ -9,7 +9,6 @@ class UserController extends AbstractController
 {
     public function login(): string|null
     {
-
         $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
@@ -26,7 +25,7 @@ class UserController extends AbstractController
                 // ...alors on persiste l'id de notre utilisateur identifié dans la session PHP à l'index ['user_id']
                 $_SESSION['user'] = $user;
                 // puis on le redirige sur une autre page (page catégories ici)
-                header('Location: /category');
+                header('Location: /');
                 return null;
             } else {
                 $errors[] = "Mot de passe non valide";
@@ -51,7 +50,7 @@ class UserController extends AbstractController
                 $errors['user'] = "Pseudo déjà utilisé";
             }
             if ($userByAddress) {
-                $errors['address'] = "Veuillez saisir votre ville";
+                $errors['address'] = "Adresse déjà utilisée !";
             }
             if ($userByEmail) {
                 $errors['email'] = "Veuillez saisir une adresse e-mail valide";

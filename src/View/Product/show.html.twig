@@ -1,35 +1,77 @@
 {% extends "layout.html.twig" %}
 {% block stylesheet %}
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
           integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-          crossorigin=""/>
+          crossorigin="" />
 {% endblock %}
 
 {% block content %}
-    <div class="container d-flex flex-column justify-content-center vh-100">
-        <div id="map" data-address="{{user.address}}" data-postal="{{user.postal_code}}"></div>
-            <div class="box-product">
-                <img src="/uploads/{{product.image}}" alt="" class="product-img">
-                <div class="d-flex flex-column">
-                    <h3>{{product.name}}</h3>
+<h1 class="text-center mt-5 page-title w-75 mx-auto">
+    <img src="https://www.wearephenix.com/wp-content/themes/phenix/assets/img/decorations/triforce-yellow.svg"
+         alt="image de décoration du titre" class="details-yellow1">
+    Voilà {{ session.user.name }}, tu as maintenant toute les infos en main !!!
+</h1>
+<div class="homecontent mt-4">
+    <img src="https://www.wearephenix.com/wp-content/themes/phenix/assets/img/decorations/doubletroubles-yellow.svg"
+         alt="image de soulignement du titre de la page">
+</div>
 
-                    <p class="p-size">Proposé par <span class="name">{{user.name}}</span> <br>
-                        {{product.message}} <br>
-                        pour toute question.<br>
-                        Contact : </p> <br>
-                        <ul>
-                            <li>{{user.email}}</li>
-                            <li>{{user.tel}}</li>
-                        </ul>
+    <div class="container  my-5">
+        <div class="row h-100 gy-5">
+            <div id="map" data-address="{{ user.address }}" data-postal="{{ user.postal_code }}" class="round col-11 col-md-10 mx-auto">
+            </div>
+
+            <div class="accordion accordion-flush round col-11 col-md-10 mx-auto mb-2" id="accordionFlushExample">
+                <div class="accordion-item container-fluid">
+                <div class="row py-2">
+                    <div class=" col-12 col-md-6 d-flex flex-row justify-content-center align-items-center">
+                        <img src="/uploads/{{ product.image }}" alt="image de {{ product.name }}"
+                             class="product-img border border-5 border-ligh">
+                    </div>
+                    <div class=" col-12 col-md-6 d-flex flex-row justify-content-center align-items-center px-md-5">
+                        <button
+                            class="accordion-button collapsed d-flex flex-row justify-content-center fs-5 fw-bold bg-light rounded-pill mt-3"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true"
+                            aria-controls="flush-collapseOne">
+                            Plus d'infos
+                        </button>
+                    </div>
                 </div>
 
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body bg-white rounded-3 mb-2">
+                            <p class="p-size text-center">
+                                Proposé par
+                                <strong>
+                                    {{ user.name }}
+                                </strong>
+                            </p>
+                            <p class="p-size">
+                                {{ product.message | raw }}
+                            <h3>Pour toute question.</h3>
+                            <p class="fs-5 fw-bold">Contact :<p>
+                            <div class="d-flex">
+                                <img src="/assets/images/e-mail.png" alt="e-mail" class="product-contact my-3">
+                                <p class="d-flex flex-column justify-content-end fw-bold">{{ user.email }}</p>
+                            </div>
+                            <div class="d-flex">
+                                <img src="/assets/images/telephone.png" alt="telephone" class="product-contact">
+                                <p class="d-flex flex-column justify-content-end fw-bold">{{ user.tel }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
     </div>
 {% endblock %}
 
 {% block javascript %}
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
             integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-            crossorigin="/assets/uploads/citron1.jpeg"></script>
+            crossorigin="/assets/uploads/citron1.jpeg">
+    </script>
     <script src="/assets/js/map.js"></script>
 {% endblock %}
+
