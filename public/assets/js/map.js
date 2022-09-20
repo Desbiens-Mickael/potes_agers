@@ -8,6 +8,7 @@ let userPostal = userMap.dataset.postal;
 
 let address = userAddress.split(' ').join('+');
 
+// la position de l'utilisateur
 fetch(`https://api-adresse.data.gouv.fr/search/?q=${address}&postcode=${userPostal}`)
     .then(response => response.json())
     .then(function(json){
@@ -28,8 +29,6 @@ fetch(`http://api.ipstack.com/${ip}?access_key=14bb5271e30e891dbbe42a1a7b614ee1&
                 .bindTooltip('Vous êtes ici');
 });
 
-
-// la position de l'utilisateur
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     maxZoom: 18,
     id: 'mapbox/streets-v11',
