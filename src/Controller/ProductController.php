@@ -27,8 +27,16 @@ class ProductController extends AbstractController
         $product = $productManager->selectOneById($productId);
         $userManager = new UserManager();
         $user = $userManager->selectOneById($userId);
+
+        if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $userIp = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        } else {
+            $userIp = $_SERVER['REMOTE_ADDR'];
+        }
+
         return $this->twig->render('Product/show.html.twig', [
-            'user' => $user,
+            'ip'      => $userIp,
+            'user'    => $user,
             'product' => $product
         ]);
     }
