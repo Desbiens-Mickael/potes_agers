@@ -8,7 +8,7 @@ let userPostal = userMap.dataset.postal;
 
 let address = userAddress.split(' ').join('+');
 
-// la position de l'utilisateur
+// la position du donneur
 fetch(`https://api-adresse.data.gouv.fr/search/?q=${address}&postcode=${userPostal}`)
     .then(response => response.json())
     .then(function(json){
@@ -19,8 +19,8 @@ fetch(`https://api-adresse.data.gouv.fr/search/?q=${address}&postcode=${userPost
                 .bindTooltip(userAddress);
 });
 
-// la position du donneur
-fetch(`http://api.ipstack.com/${ip}?access_key=14bb5271e30e891dbbe42a1a7b614ee1&format=1`)
+// la position de l'utilisateur
+fetch(`https://ipgeolocation.abstractapi.com/v1/?api_key=4f2a45153db746f5b4b4668ed54e9f30&ip_address=${ip}`)
 .then(response => response.json())
 .then(function(json) {
     return L.marker([json.latitude, json.longitude], {alt: 'pointeur carte'})
@@ -29,6 +29,7 @@ fetch(`http://api.ipstack.com/${ip}?access_key=14bb5271e30e891dbbe42a1a7b614ee1&
                 .bindTooltip('Vous êtes ici');
 });
 
+//génération de la carte
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     maxZoom: 18,
     id: 'mapbox/streets-v11',
